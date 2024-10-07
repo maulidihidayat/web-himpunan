@@ -1,11 +1,20 @@
 import type { Config } from "tailwindcss";
+const withMT = require("@material-tailwind/react/utils/withMT");
 
+<<<<<<< HEAD
 const config: Config = {
     darkMode: ["class"],
     content: [
+=======
+const config: Config = withMT({
+  darkMode: ["class"],
+  content: [
+>>>>>>> 272788920100b3dc3f6911e11329638dcf8970ce
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
   	extend: {
@@ -65,5 +74,10 @@ const config: Config = {
   	}
   },
   plugins: [require("tailwindcss-animate")],
+<<<<<<< HEAD
 };
+=======
+});
+
+>>>>>>> 272788920100b3dc3f6911e11329638dcf8970ce
 export default config;
