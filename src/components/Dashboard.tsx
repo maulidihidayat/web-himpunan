@@ -1,12 +1,30 @@
+import Link from 'next/link'
 import React from 'react'
+import Image, { StaticImageData } from 'next/image'
+import logo from "@/components/Image/Asset 1@300x.png"
 
-function Dashboard() {
+interface Dashboard {
+  logo : string | StaticImageData
+}
+
+const Dashboard = ({logo}: Dashboard) => {
+
   return (
     <>
-      <div className="">
+      <div className="bg-gray-700 fixed h-screen w-1/5">
 
-        <h4>Dashboard</h4>
-        <p>7 oktober 2024</p>
+        <Image
+        src={logo}
+        width={92}
+        height={90}
+        alt=""
+        className=""
+        />
+
+        <button>
+          <Link href={"/"}>JOIN MEMBER</Link>
+        </button>
+        
 
       </div>
     </>
