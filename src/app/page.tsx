@@ -8,15 +8,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Image from "next/image"; // Jika menggunakan Next.js untuk optimasi gambar
+import Image from "next/image";
 
 export default function MyCarousel() {
   return (
     <div>
       <NavBar />
-      <Carousel className="my-carousel overflow-x-hidden">
+      <Carousel className="my-carousel ">
         <CarouselContent>
-          {/* Carousel Slide 1 */}
           <CarouselItem>
             <img
               src="https://www.itb.ac.id/files/headline/Artboard_1_copy_11zon_(1).jpg"
@@ -26,7 +25,10 @@ export default function MyCarousel() {
 
           {/* Carousel Slide 2 */}
           <CarouselItem>
-            <img src="https://www.itb.ac.id/files/headline/1723017453-Screenshot-2024-08-07-145241.jpg" alt="" />
+            <img
+              src="https://www.itb.ac.id/files/headline/1723017453-Screenshot-2024-08-07-145241.jpg"
+              alt=""
+            />
           </CarouselItem>
 
           {/* Carousel Slide 3 */}
