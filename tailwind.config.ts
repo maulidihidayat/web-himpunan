@@ -9,9 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+          customBlue: '#0065DB', // Misalnya, menambahkan warna biru kustom
+          customYellow: '#FBBF24', // Warna kuning kustom
+          customGreen: '#10B981', // Warna hijau kustom
+        },
     },
   },
   plugins: [],
