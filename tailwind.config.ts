@@ -10,8 +10,11 @@ const config: Config = {
     extend: {
       colors: {
           customBlue: '#0065DB', // Misalnya, menambahkan warna biru kustom
-          customYellow: '#FBBF24', // Warna kuning kustom
-          customGreen: '#10B981', // Warna hijau kustom
+          customPink: '#EA1565', // Warna kuning kustom
+          customYellow: '#FDE86F', // Warna hijau kustom
+          customGreen: '#65DB00', // Warna hijau kustom
+          customDarkBlue: '#005AAB', // Warna hijau kustom
+          customDarkenBlue: '#26136A', // Warna hijau kustom
         },
     },
   },
