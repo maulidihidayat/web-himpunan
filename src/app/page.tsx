@@ -1,7 +1,7 @@
 import NavBar from "@/components/NavBar";
-import gambar2 from "@/components/Image/gambar1.png";
-import gambar3 from "@/components/Image/gambar2.png";
-import gambar4 from "@/components/Image/gamabr4.png";
+import gambar2 from "@/components/Image/widgets/gambar1.png";
+import gambar3 from "@/components/Image/widgets/gambar2.png";
+import gambar4 from "@/components/Image/widgets/gamabr4.png";
 
 
 import {

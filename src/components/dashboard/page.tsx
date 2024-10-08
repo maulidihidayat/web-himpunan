@@ -1,4 +1,4 @@
-import Dashboard from "@/app/dashboard/page"
+import Dashboard from "@/components/dashboard/page"
 import React from 'react'
 
 export default function page() {
