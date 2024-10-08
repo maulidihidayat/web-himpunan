@@ -1,13 +1,11 @@
 import Information from "@/components/LandingPage/Information";
 import NavBar from "@/components/NavBar";
-import Courasel from "@/components/ui/Courasel";
-import image from "@/image/image";
+import image from '@/Image/image';
 
 export default function MyCarousel() {
   return (
     <div>
       <NavBar />
-      <Courasel />
 
       <div className=" flex px-32 py-96 ">
         <Information

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image"; // Pastikan import Image dari next/image
 import React from "react";
 import { Bell } from "lucide-react";
-import image from "@/image/image";
+import image from "@/Image/image";
 
 const NavBar = () => {
   return (
