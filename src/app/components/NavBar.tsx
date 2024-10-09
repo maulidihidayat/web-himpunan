@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Image from "next/image"; // Pastikan import Image dari next/image
+import Image from "next/image"; 
 import React from "react";
 import { Bell } from "lucide-react";
-import image from "@/Image/image";
+import logo from "@/Image/widgets/logo.png"
 
 const NavBar = () => {
   return (
@@ -10,7 +10,7 @@ const NavBar = () => {
       <div className="flex justify-between items-center py-8 px-8 md:px-52">
         <div className="flex items-center space-x-4">
           <Image
-            src={image.logo}
+            src={logo}
             alt="Himpunan Pendidikan Informatika"
             width={61}
             height={61}

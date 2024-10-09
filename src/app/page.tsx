@@ -1,11 +1,12 @@
 import Devision from "@/app/components/LandingPage/Devision";
 import Information from "@/app/components/LandingPage/Information";
 import YoutubeSection from "@/app/components/LandingPage/YoutubeSection";
-import NavBar from "@/app/components/NavBar";
+
 
 export default function MyCarousel() {
   return (
     <div>
+      
       <div className="flex flex-col items-center px-8 py-48  bg-customDarkenBlue text-white">
         <div className="relative flex flex-col space-x-4 bg-white  max-w-2xl  w-[888px] h-[198px] rounded-2xl py-8 shadow-lg"></div>
 

@@ -9,7 +9,7 @@ const YoutubeSection = ({ description }: components) => {
     <div className="aspect-video">
       <iframe
         className="w-[288px] h-[288px]"
-        src="https://youtu.be/Jig1hFU1s6c?si=SO4URwCiOSsvuaSs"
+        src="https://www.youtube.com/embed/r9jwGansp1E"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
