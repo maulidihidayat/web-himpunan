@@ -2,11 +2,11 @@ import Information from "@/components/LandingPage/Information";
 import NavBar from "@/components/NavBar";
 
 
+
 export default function MyCarousel() {
   return (
     <div>
       <NavBar />
-
 
       <div className=" flex px-32 py-96 ">
         <Information
