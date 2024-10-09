@@ -6,7 +6,7 @@ import image from "@/Image/image";
 
 const NavBar = () => {
   return (
-    <div className="bg-customBlue text-white">
+    <div className="bg-customBlue text-white ">
       <div className="flex justify-between items-center py-8 px-8 md:px-52">
         <div className="flex items-center space-x-4">
           <Image
@@ -38,7 +38,9 @@ const NavBar = () => {
         </div>
 
         <div className="flex items-center space-x-4 absolute right-0 mr-10">
-          <Bell />
+          <Link href="/">
+            <Bell />
+          </Link>
           <button className="bg-customPink rounded-lg text-white w-20 h-11 hover:bg-customDarkBlue">
             Login
           </button>
