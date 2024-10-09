@@ -38,7 +38,11 @@ const NavBar = () => {
         </div>
 
         <div className="flex items-center space-x-4 absolute right-0 mr-10">
-          <Bell />
+          {/* ini untuk icon bell */}
+          <Link href="/">
+            <Bell />
+          </Link>
+
           <button className="bg-customPink rounded-lg text-white w-20 h-11 hover:bg-customDarkBlue">
             Login
           </button>

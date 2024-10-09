@@ -19,7 +19,8 @@ const config: Config = withMT({
         customGreen: '#65DB00',
         customDarkBlue: '#005AAB',
         customDarkenBlue: '#26136A',
-        border: '#D1D5DB', // Example of a custom border color
+        customgray: '#828282',
+        border: '#D1D5DB', 
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
