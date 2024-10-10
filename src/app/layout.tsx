@@ -39,7 +39,7 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} antialiased bg-customDarkenBlue`}
       >
-        <NavBar/>
+        
         {children}
       </body>
     </html>
