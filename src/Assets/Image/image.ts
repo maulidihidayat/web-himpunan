@@ -6,6 +6,7 @@ import logo from './widgets/logo.png'
 import logo2 from './widgets/logopif.png'
 
 
+
 const image = {
     gambar1,
     gambar2,
