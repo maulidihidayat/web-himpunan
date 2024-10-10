@@ -1,6 +1,6 @@
 import Register from '@/components/Register'
 import React from 'react'
-import logo from "@/Image/widgets/logo pif 2.jpg"
+import logo from "@/Image/widgets/logopif.png"
 
 
 

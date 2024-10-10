@@ -7,20 +7,19 @@ interface Register {
 
 const Register = ({logo}: Register) =>{
   return (
-    <div className="bg-gray-300 w-full h-screen">
+    <div className="bg-gray-300 w-full h-auto">
 
+        <div className="flex flex-row justify-center">
+        <div className="shadow-xl p-4 border max-w-sm">
         <div className="flex justify-center">
             <Image 
             src={logo} 
-            width={0}
-            height={0}
+            width={800}
+            height={500}
             alt='/'
             className="pt-5"/>
         </div>
-
-        <div className="flex flex-row justify-center">
-        <div className="bg-white shadow-xl p-4 border max-w-sm">
-            <h2 className="text-center text-2xl font-semibold mt-5 text-white">Register</h2>
+            <h2 className="text-center text-2xl font-semibold mt-5 text-blue-600">Register</h2>
             
             <div className="flex justify-center p-10">
 
@@ -50,7 +49,7 @@ const Register = ({logo}: Register) =>{
 
                     {/* Button */}
                     <div className="mb-4">
-                        <button type="submit" className="w-full bg-blue-500 py-2 rounded-lg hover:bg-blue-600 text-white font-semibold">Register now</button>
+                        <button type="submit" className="w-full bg-blue-300 py-2 rounded-lg hover:bg-blue-600 text-white font-semibold">Register now</button>
                     </div>
                 </form>
             </div>

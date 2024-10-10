@@ -3,7 +3,6 @@ import React from 'react'
 import logo from '@/Image/widgets/logo pif 2.jpg'
 import Link from 'next/link'
 import { SquareCheck } from 'lucide-react'
-import gambar from "@/Image/widgets/Group 8.png"
 
 interface LoginPage{
     logo : string | StaticImageData
