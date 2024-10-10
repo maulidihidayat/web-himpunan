@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import React from "react";
+import image from "@/Image/image";
 
 interface InformationProps {
   nama: string;
@@ -10,6 +11,7 @@ interface InformationProps {
 const Information: React.FC<InformationProps> = ({ nama, deskripsi }) => {
   return (
     <div>
+
       <div className="flex">
         {/* <Image src={gambar} alt={nama} width={500} height={300} />  */}
         <div>
