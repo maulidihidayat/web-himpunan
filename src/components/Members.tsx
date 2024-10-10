@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import image from "@/Image/image";
+import image from "@/Assets/Image/image";
 
 const index = () => {
   return (
