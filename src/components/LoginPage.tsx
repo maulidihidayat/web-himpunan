@@ -52,7 +52,8 @@ const LoginPage = ({logo}: LoginPage) => {
                 <div className='flex justify-center'>
                 <SquareCheck
                 className='pr-1'/>
-                <p className='text-black text-[10px] pt-1'>I Agree to the terms of service and privacy public</p>
+                <Link className="text-black text-[10px] pt-1" href={"/"}>I Agree to the terms of service and privacy public </Link>
+                {/* <p className='text-black text-[10px] pt-1'>I Agree to the terms of service and privacy public</p> */}
                 </div>
 
             </form>
@@ -61,7 +62,7 @@ const LoginPage = ({logo}: LoginPage) => {
         <div className=" flex justify-center">
             <button className="bg-deep-orange-500 font-semibold text-white p-1 mt-2 rounded-sm w-2/6">Login</button>
         </div>
-        <Link className="flex justify-center text-white font-semibold text-[10px] m-2 underline" href={"/"}>Forgot Password</Link>
+        <Link className="flex justify-center text-black font-semibold text-[10px] m-2 underline" href={"/"}>Forgot Password</Link>
 
         <div>
         
