@@ -1,12 +1,12 @@
 "use client";
 
 import Footer from "@/components/Footer";
-import Devision from "@/components/LandingPage/Devision";
-import Information from "@/components/LandingPage/Information";
+import Devision from "@/components/Devision";
+import Information from "@/components/Information";
 import Members from "@/components/Members";
 import News from "@/components/News";
 import YoutubeEmbed from "@/components/YoutubeEmbed";
-import image from "@/Image/image";
+import image from "@/Assets/Image/image";
 import Image from "next/image";
 
 export default function MyCarousel() {
