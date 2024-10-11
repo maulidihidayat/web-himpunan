@@ -1,10 +1,8 @@
 import Image, { StaticImageData } from 'next/image'
 import React from 'react'
-import LoginPage from '@/components/'
 import logo from "@/Assets/Image/widgets/logopif.png"
 import gambar from "@/Assets/Image/widgets/Group 6.jpg"
 import Background from '@/components/Background'
-import logo from "@/Assets/Image/widgets/logopif.png"
 import Link from 'next/link'
 import { Link2, SquareCheck } from 'lucide-react'
 
