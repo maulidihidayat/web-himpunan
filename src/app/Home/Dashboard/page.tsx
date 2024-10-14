@@ -1,13 +1,12 @@
-import SideBar from '@/components/SideBar'
-import React from 'react'
+import SideBar from "@/components/SideBar";
+import { Divide, DnaIcon } from "lucide-react";
+import React from "react";
 
-export default function () {
+export default function Dashboard() {
   return (
     <div>
-
-        <SideBar/>
-
-
+      
+      
     </div>
-  )
+  );
 }
