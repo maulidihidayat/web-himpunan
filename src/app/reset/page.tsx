@@ -2,14 +2,14 @@ import Image, { StaticImageData } from 'next/image'
 import React from 'react'
 import logo from "@/Assets/Image/widgets/logopif.png"
 import Link from 'next/link'
-import { Link2, SquareCheck } from 'lucide-react'
+import gambar1 from "@/Assets/Image/widgets/bg12.png"
 
 
 
 const LoginPage = () => {
   return (
 
-<div className=''>
+<div className='bg-cover bg-center h-screen w-full' style={{backgroundImage: `url(${gambar1.src})`}}>
 
     <div className='fixed bg-white h-[100vh] w-[470px] right-0'>
 
