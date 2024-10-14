@@ -2,14 +2,12 @@ import Image, { StaticImageData } from 'next/image'
 import React from 'react'
 import logo from "@/Assets/Image/widgets/logopif.png"
 import Link from 'next/link'
-import { Link2, SquareCheck } from 'lucide-react'
-
-
+import { SquareCheck } from 'lucide-react'
+import gambar1 from "@/Assets/Image/widgets/bg11.png"
 
 const LoginPage = () => {
   return (
-
-<div className=''>
+<div className='bg-cover bg-center h-screen w-full' style={{backgroundImage: `url(${gambar1.src})`}}>
 
     <div className='fixed bg-white h-[100vh] w-[470px] right-0'>
 
@@ -56,15 +54,7 @@ const LoginPage = () => {
         <Link className="flex justify-evenly font-semibold text-[10px] m-2 text-customPink" href={"/"}>Forgot Password?</Link>
 
         <span className="text-black font-semibold flex justify-center">Or</span>
-
-        <div>
-          
-        </div>
         <span className="text-black flex justify-center text-sm">Already have an account?<Link className="flex justify-center text-sm text-customPink space-x-5" href={"/"}>Sign in</Link></span>
-
-        <div>
-        
-        </div>
 
     </div>
 
