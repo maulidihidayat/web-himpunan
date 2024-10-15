@@ -6,7 +6,7 @@ import image from "@/Assets/Image/image";
 
 const NavBar = () => {
   return (
-    <div className="bg-customBlue text-white">
+    <div className="bg-customBlue text-white sticky top-0 ">
       <div className="flex justify-between items-center py-8 px-8 md:px-52">
         <div className="flex items-center space-x-4">
           <Image
