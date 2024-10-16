@@ -15,7 +15,7 @@ import Link from "next/dist/client/link";
 
 const page = () => {
   return (
-    <div className="h-[100%vh] w-full max-w-[20rem] p-6 shadow-xl bg-white shadow-blue-gray-900/5">
+    <div className="h-[100vh] w-full max-w-[20rem] p-6 shadow-xl bg-white shadow-blue-gray-900/15 fixed">
       {/* Logo */}
       <div className="flex justify-center mb-6">
         <Image src={image.logo2} alt="Logo" width={92} height={90} />
