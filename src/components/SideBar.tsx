@@ -15,13 +15,11 @@ import Link from "next/dist/client/link";
 
 const page = () => {
   return (
-    <div className="h-[100%vh]  w-1/4 max-w-[20rem] p-6 shadow-xl bg-white shadow-blue-gray-900/5 fixed ">
+    <div className="h-[100vh]  w-1/4 max-w-[20rem] p-6 shadow-xl bg-white shadow-blue-gray-900/5 fixed ">
       {/* Logo */}
       <div className="flex justify-center mb-6">
         <Image src={image.logo2} alt="Logo" width={92} height={90} />
       </div>
-
-      {/* Join Member Button */}
 
       <h1 className="flex mx-auto bg-customPink w-44 h-12 rounded-lg text-lg text-white gap-2 justify-center items-center transition-colors duration-300 hover:bg-pink-600 cursor-pointer">
         Join Member <CirclePlus className="w-5 h-5" />
