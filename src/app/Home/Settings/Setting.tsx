@@ -5,7 +5,7 @@ import Form from "./form";
 export default function Setting() {
   return (
     <div>
-      <div className="bg-white shadow-lg rounded-5xl w-[902px] h-[680px] flex flex-col mx-auto p-6">
+      <div className="bg-white  shadow-lg rounded-5xl w-[902px] h-[680px] flex flex-col mx-auto p-6">
         {/* Account Settings Title */}
         <div className="mb-6">
           <h1 className="text-customPink border border-customPink rounded-sm p-2 border-b-4 text-xl font-semibold">
@@ -19,7 +19,7 @@ export default function Setting() {
         </div>
 
         {/* Profile Picture and Buttons */}
-        <div className="flex items-center space-x-10 mb-8">
+        <div className="flex items-center space-x-10  mb-8">
           <img
             src="https://cdn-icons-png.flaticon.com/128/1326/1326405.png"
             alt="Profile Picture"
