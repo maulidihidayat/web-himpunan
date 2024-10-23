@@ -11,9 +11,9 @@ const LoginPage = () => {
   return (
 <div className='bg-cover bg-center h-screen w-full' style={{backgroundImage: `url(${gambar1.src})`}}>
 
-    <div className='fixed bg-white h-[100vh] w-[470px] right-0'>
+    <div className='fixed bg-white h-[100vh] w-[470px] right-0 '>
 
-        <div className="flex justify-center mt-12">
+        <div className="flex justify-center mt-12 ">
         <Image
             src={logo}
             width={92}
