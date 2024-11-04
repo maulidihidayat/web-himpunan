@@ -1,9 +1,11 @@
 "use client";
 import React from "react";
-import { FieldValues, useForm } from "react-hook-form";
+import { FieldValues, FormProvider, useForm } from "react-hook-form";
+import InputForm from "@/components/InputForm";
 
 export default function FormMembers() {
-  const { handleSubmit, register } = useForm();
+  const method = useForm();
+  const {handleSubmit}=method
   const handleSave = (data: FieldValues) => {
     console.log(data);
   };
@@ -13,27 +15,18 @@ export default function FormMembers() {
         <h2 className="flex justify-center underline text-customPink font-bold  ">
           FORM MEMBERS
         </h2>
+        <FormProvider {...method}>
+
         <form
           onSubmit={handleSubmit((data) => handleSave(data))}
           className="flex justify-center space-x-10 mb-2 items-center"
         >
           <div className="space-y-4">
             {/* Full name - Video Left*/}
-            <div className="w-[335px]">
-              <label className="block text-customgray font-bold mt-2">
-                Nama Lengkap
-              </label>
-              <input
-                {...register("fullname")}
-                type="text"
-                required
-                placeholder="Udinsarudh"
-                className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
-              />
-            </div>
-
+            
+            <InputForm label="fullname" type="text" name="fullname"/>
             {/* Nomor Induk Mahasiswa/nim */}
-            <div className="w-[335px]">
+            {/* <div className="w-[335px]">
               <label className="block text-customgray font-bold mt-2">
                 Nomor Induk Mahasiswa
               </label>
@@ -44,10 +37,10 @@ export default function FormMembers() {
                 placeholder="210305002"
                 className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
               />
-            </div>
+            </div> */}
 
             {/* Email */}
-            <div className="w-[335px]">
+            {/* <div className="w-[335px]">
               <label className="block text-customgray font-bold mt-2">
                 Email
               </label>
@@ -58,10 +51,10 @@ export default function FormMembers() {
                 placeholder="udinsarudh@gmail.com"
                 className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
               />
-            </div>
+            </div> */}
 
             {/* Phone Number */}
-            <div className="w-[335px]">
+            {/* <div className="w-[335px]">
               <label className="block text-customgray font-bold mt-2">
                 Nomor Telepon
               </label>
@@ -72,12 +65,12 @@ export default function FormMembers() {
                 placeholder="081234567890"
                 className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
               />
-            </div>
+            </div> */}
           </div>
 
           <div className="space-y-4">
             {/* Addres - Active right */}
-            <div className="w-[335px]">
+            {/* <div className="w-[335px]">
               <label className="block text-customgray font-bold mt-2">
                 Alamat Lengkap
               </label>
@@ -88,10 +81,10 @@ export default function FormMembers() {
                 placeholder="Selong"
                 className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
               />
-            </div>
+            </div> */}
 
             {/* Gender */}
-            <div className="w-[335px]">
+            {/* <div className="w-[335px]">
               <label className="block text-customgray font-bold mt-2">
                 Jenis Kelamin
               </label>
@@ -105,10 +98,10 @@ export default function FormMembers() {
                 <option value="Laki-Laki">Laki-Laki</option>
                 <option value="Perempuan">Perempuan</option>
               </select>
-            </div>
+            </div> */}
 
             {/* Birthdate */}
-            <div className="w-[335px]">
+            {/* <div className="w-[335px]">
               <label className="block text-customgray font-bold mt-2">
                 Tanggal Lahir
               </label>
@@ -119,10 +112,10 @@ export default function FormMembers() {
                 placeholder="?"
                 className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
               />
-            </div>
+            </div> */}
 
             {/* Active */}
-            <div className="w-[335px]">
+            {/* <div className="w-[335px]">
               <label className="block text-customgray font-bold mt-2">
                 Aktif
               </label>
@@ -134,19 +127,20 @@ export default function FormMembers() {
                 <option value={1}>Aktif</option>
                 <option value={0}>Tidak Aktif</option>
               </select>
-            </div>
+            </div> */}
           </div>
 
           {/* Submit Button */}
-          <div className="flex justify-center m-6">
+          {/* <div className="flex justify-center m-6">
             <button
               type="submit"
               className="w-[142px] border-b-4 border-customPink border  text-customPink font-bold py-3 px-4 rounded-md hover:bg-customPink-dark focus:outline-none focus:ring-2 focus:ring-customPink focus:ring-opacity-50"
             >
               Submit
             </button>
-          </div>
+          </div> */}
         </form>
+        </FormProvider>
       </div>
     </div>
   );
