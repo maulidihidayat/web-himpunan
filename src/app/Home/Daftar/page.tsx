@@ -11,7 +11,7 @@ export default function Page() {
       </div>
       <div className="flex flex-col flex-grow">
         <HeaderDashboard />
-        <div className="">
+        <div>
           <Form />     
         </div>
       </div>

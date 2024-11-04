@@ -1,15 +1,19 @@
 import React from "react";
+import { FieldValues, useForm } from "react-hook-form";
 
 export default function Form() {
+  const { register, handleSubmit } = useForm();
+  const hanldeSave = (data: FieldValues) => console.log(data);
+  console.log(Error);
+
   return (
-
-    
-
-      <div className="flex justify-center mt-10">
-        <div className="w-[902px] h-auto items-center p-5 rounded-2xl shadow-md">
-        <h4 className="text-customPink border border-customPink mb-6 p-1 rounded-sm w-1/4 text-center">Registration Member</h4>
-         <hr className="border-t-2  border-gray-300"/> 
-        <form className="flex max-w-2xl space-x-10 items-center">
+    <div className="flex justify-center mt-10">
+      <div className="w-[902px] h-auto items-center p-10  rounded-2xl shadow-md">
+        <h4 className="text-customPink border border-customPink mb-6 p-1 rounded-sm w-1/4 text-center">
+          Registration Member
+        </h4>
+        <hr className="border-t-2  border-gray-300" />
+        <form onSubmit={hanldeSave} className="flex max-w-2xl space-x-10 items-center">
           {/* Full Name and */}
           <div className="mb-6 space-y-4">
             {/* Full Name */}
@@ -82,16 +86,15 @@ export default function Form() {
 
             {/* Email */}
             <div className="w-[335px]">
-              <label htmlFor="email" className="text-customgray font-bold mt-2"
-              >
+              <label htmlFor="email" className="text-customgray font-bold mt-2">
                 Email
               </label>
-              <input 
-              type="email"
-              id="email"
-              required
-              placeholder="ahmadhapinuddin@gmail.com"
-              className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:ring-customPink"
+              <input
+                type="email"
+                id="email"
+                required
+                placeholder="ahmadhapinuddin@gmail.com"
+                className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:ring-customPink"
               />
             </div>
           </div>
@@ -132,20 +135,21 @@ export default function Form() {
               ></textarea>
             </div>
 
-          {/* Submit Button */}
-          <div className="flex justify-end">
-            <button
-              type="submit"
-              className="mt-28 w-[142px] border-b-4 border-customPink border  text-customPink font-bold py-3 px-4 rounded-md hover:bg-customPink-dark focus:outline-none focus:ring-2 focus:ring-customPink focus:ring-opacity-50"
-            >
-              Submit
-            </button>
-          </div>
+            {/* Submit Button */}
+            <div className="flex justify-end">
+              <button {...register}
+                type="submit"
+                className="mt-28 w-[142px] border-b-4 hover:border-b-[6px] border-customPink border text-customPink font-bold py-3 px-4 rounded-md hover:bg-customPink-dark focus:outline-none focus:ring-2 focus:ring-customPink focus:ring-opacity-50"
+              >
+                Submit
+              </button>
+            </div>
           </div>
         </form>
-        </div>
       </div>
-
-
+    </div>
   );
+}
+function useFrom() {
+  throw new Error("Function not implemented.");
 }
