@@ -25,6 +25,10 @@ export default function NotFound() {
         >
           Go to Homepage
         </a>{" "}
+        <p className="text-center">
+          The page you're looking for doesn't exist.
+        </p>
+        <a href="/">Go to Homepage</a>{" "}
       </div>
     </div>
   );
