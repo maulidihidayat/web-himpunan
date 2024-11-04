@@ -43,7 +43,7 @@ const HeaderDashboard = () => {
         <div className="flex items-center">
           <Mail className="text-customPink w-8" />
           <BellIcon className="text-customPink w-8" />
-          <Dropdown />
+          <Dropdown/>
         </div>
       </div>
     </div>

@@ -84,7 +84,7 @@ export default function Form() {
             type="submit"
             className="w-[142px] border-b-4 border-customPink border  text-customPink font-bold py-3 px-4 rounded-md hover:bg-customPink-dark focus:outline-none focus:ring-2 focus:ring-customPink focus:ring-opacity-50"
           >
-            Submit
+            Update
           </button>
         </div>
       </form>
