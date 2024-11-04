@@ -1,154 +1,100 @@
-"use client"
-import InputForm from '@/components/InputForm';
-import React from 'react'
-import { FieldValues, FormProvider, useForm } from 'react-hook-form';
+"use client";
+import InputForm from "@/components/InputForm";
+import React from "react";
+import { FieldValues, FormProvider, useForm } from "react-hook-form";
 
 export default function Page() {
-  const method = useForm();
-  const {handleSubmit}=method
+  const methods = useForm();
+  const { handleSubmit } = methods;
+
   const handleSave = (data: FieldValues) => {
     console.log(data);
   };
+
   return (
-    <div>
-        <div className="flex justify-center items-center">
-      <div className="bg-white shadow-lg rounded-md w-[902px] h-auto mt-24">
-        <h2 className="flex justify-center underline text-customPink font-bold  ">
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="bg-white shadow-lg rounded-lg w-[800px] p-10 mt-20">
+        <h2 className="text-center underline text-customPink font-bold text-2xl mb-6">
           FORM MEMBERS
         </h2>
-        <FormProvider {...method}>
-
-        <form
-          onSubmit={handleSubmit((data) => handleSave(data))}
-          className="flex justify-center space-x-10 mb-2 items-center"
-        >
-          <div className="space-y-4">
-            {/* Full name - Video Left*/}
-            {/* <InputForm label="fullname" type="text" name="fullname"/> */}
-            {/* Nomor Induk Mahasiswa/nim */}
-            <div className="w-[335px]">
-              <label className="block text-customgray font-bold mt-2">
-                Nomor Induk Mahasiswa
-              </label>
+        <FormProvider {...methods}>
+          <form
+            onSubmit={handleSubmit(handleSave)}
+            className="grid grid-cols-2 gap-8"
+          >
+            <div className="space-y-4">
               <InputForm
-              label="username" type="text" name="username"/>
-              
-              
-              {/* <input
-                {...register("nim")}
+                placeholder="Udin Sarudin"
+                label="Full Name"
+                name="name"
                 type="text"
-                required
-                placeholder="210305002"
-                className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
-              /> */}
-            </div>
+              />
 
-            {/* Email */}
-            {/* <div className="w-[335px]">
-              <label className="block text-customgray font-bold mt-2">
-                Email
-              </label>
-              <input
-                {...register("email")}
+              <InputForm
+                placeholder="210030XXXX"
+                label="Nomor Induk Mahasiswa"
+                type="text"
+                name="nim"
+              />
+              <InputForm
+                placeholder="udin@gmail.com"
+                label="Email"
+                name="email"
                 type="email"
-                required
-                placeholder="udinsarudh@gmail.com"
-                className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
               />
-            </div> */}
-
-            {/* Phone Number */}
-            {/* <div className="w-[335px]">
-              <label className="block text-customgray font-bold mt-2">
-                Nomor Telepon
-              </label>
-              <input
-                {...register("phone")}
+              <InputForm
+                placeholder="087453XXXX"
+                label="Phone Number"
+                name="phone_number"
                 type="tel"
-                required
-                placeholder="081234567890"
-                className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
               />
-            </div> */}
-          </div>
-
-          <div className="space-y-4">
-            {/* Addres - Active right */}
-            {/* <div className="w-[335px]">
-              <label className="block text-customgray font-bold mt-2">
-                Alamat Lengkap
-              </label>
-              <input
-                {...register("addres")}
+            </div>
+            <div className="space-y-4">
+              <InputForm
+                placeholder="Mars"
+                label="Alamat"
+                name="address"
                 type="text"
-                required
-                placeholder="Selong"
-                className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
               />
-            </div> */}
-
-            {/* Gender */}
-            {/* <div className="w-[335px]">
-              <label className="block text-customgray font-bold mt-2">
-                Jenis Kelamin
-              </label>
-              <select
-                {...register("gender")}
-                name="gender"
-                id="gender"
-                className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
-              >
-                <option value="">Jenis Kelamin</option>
-                <option value="Laki-Laki">Laki-Laki</option>
-                <option value="Perempuan">Perempuan</option>
-              </select>
-            </div> */}
-
-            {/* Birthdate */}
-            {/* <div className="w-[335px]">
-              <label className="block text-customgray font-bold mt-2">
-                Tanggal Lahir
-              </label>
-              <input
-                {...register("birthdate")}
+              <InputForm
+                placeholder=""
+                label="Tanggal Lahir"
+                name="birthdate"
                 type="date"
-                required
-                placeholder="?"
-                className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
               />
-            </div> */}
+              <InputForm
+                label="Jenis Kelamin"
+                name="gender"
+                type="radio"
+                options={[
+                  { value: "Laki-Laki", label: "Laki-Laki" },
+                  { value: "Perempuan", label: "Perempuan" },
+                ]}
+                placeholder={""}
+              />
 
-            {/* Active */}
-            {/* <div className="w-[335px]">
-              <label className="block text-customgray font-bold mt-2">
-                Aktif
-              </label>
-              <select
-                {...register("Aktif", { setValueAs: (value) => Number(value) })}
-                className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
+              <InputForm
+                label="Keaktifan"
+                name="active"
+                placeholder={""}
+                type="radio"
+                options={[
+                  { value: "Aktif", label: "Aktif" },
+                  { value: "Tidak Aktif", label: "Tidak Aktif" },
+                ]}
+              />
+            </div>
+            <div className="col-span-2 flex justify-center mt-6">
+              <button
+                type="submit"
+                className="w-[150px] border-customPink border border-b-4 text-customPink font-bold py-3 rounded-md hover:bg-customPink-dark focus:outline-none focus:ring-2 focus:ring-customPink focus:ring-opacity-50 transition-all"
               >
-                <option value="">pilih</option>
-                <option value={1}>Aktif</option>
-                <option value={0}>Tidak Aktif</option>
-              </select>
-            </div> */}
-          </div>
-
-          {/* Submit Button */}
-          {/* <div className="flex justify-center m-6">
-            <button
-              type="submit"
-              className="w-[142px] border-b-4 border-customPink border  text-customPink font-bold py-3 px-4 rounded-md hover:bg-customPink-dark focus:outline-none focus:ring-2 focus:ring-customPink focus:ring-opacity-50"
-            >
-              Submit
-            </button>
-          </div> */}
-        </form>
+                Submit
+              </button>
+            </div>
+          </form>
         </FormProvider>
       </div>
     </div>
-    </div>
-  )
+  );
 }
-
-

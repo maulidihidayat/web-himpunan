@@ -21,14 +21,10 @@ export default function NotFound() {
         </p>
         <a
           href="/"
-          className="p-4 mt-4 bg-customPink border-black text-white border rounded-xl border-b-4 hover:border-b-[6px] "
+          className="p-4 mt-4  border-customPink text-customPink border rounded-xl border-b-4 hover:border-b-[6px] "
         >
           Go to Homepage
         </a>{" "}
-        <p className="text-center">
-          The page you're looking for doesn't exist.
-        </p>
-        <a href="/">Go to Homepage</a>{" "}
       </div>
     </div>
   );
