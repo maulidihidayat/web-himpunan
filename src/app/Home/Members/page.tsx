@@ -1,16 +1,17 @@
-"use client";
-import React from "react";
-import { FieldValues, FormProvider, useForm } from "react-hook-form";
-import InputForm from "@/components/InputForm";
+"use client"
+import InputForm from '@/components/InputForm';
+import React from 'react'
+import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 
-export default function FormMembers() {
+export default function Page() {
   const method = useForm();
   const {handleSubmit}=method
   const handleSave = (data: FieldValues) => {
     console.log(data);
   };
   return (
-    <div className="flex justify-center items-center">
+    <div>
+        <div className="flex justify-center items-center">
       <div className="bg-white shadow-lg rounded-md w-[902px] h-auto mt-24">
         <h2 className="flex justify-center underline text-customPink font-bold  ">
           FORM MEMBERS
@@ -23,21 +24,24 @@ export default function FormMembers() {
         >
           <div className="space-y-4">
             {/* Full name - Video Left*/}
-            
-            <InputForm label="fullname" type="text" name="fullname"/>
+            {/* <InputForm label="fullname" type="text" name="fullname"/> */}
             {/* Nomor Induk Mahasiswa/nim */}
-            {/* <div className="w-[335px]">
+            <div className="w-[335px]">
               <label className="block text-customgray font-bold mt-2">
                 Nomor Induk Mahasiswa
               </label>
-              <input
+              <InputForm
+              label="username" type="text" name="username"/>
+              
+              
+              {/* <input
                 {...register("nim")}
                 type="text"
                 required
                 placeholder="210305002"
                 className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
-              />
-            </div> */}
+              /> */}
+            </div>
 
             {/* Email */}
             {/* <div className="w-[335px]">
@@ -143,5 +147,8 @@ export default function FormMembers() {
         </FormProvider>
       </div>
     </div>
-  );
+    </div>
+  )
 }
+
+

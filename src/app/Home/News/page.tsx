@@ -1,7 +1,7 @@
 import React from 'react'
-import Form from "@/app/Members/Form"
+import Form from "@/app/Home/News/Form"
 
-export default function Page() {
+export default function page() {
   return (
     <div>
         <Form/>
