@@ -5,6 +5,8 @@ import React from "react";
 import { FieldValues, FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z  } from "zod";
+import React from "react";
+import { FieldValues, FormProvider, useForm } from "react-hook-form";
 
 const MemberSchema = z.object({
   nim: z.string().min(10).max(15),
@@ -17,6 +19,7 @@ const MemberSchema = z.object({
   brithdate: z.string().min(1),
 });
 export default function Page() {
+
   const methods = useForm<z.infer<typeof MemberSchema>>({
     defaultValues: {
       nim: "",
@@ -31,6 +34,7 @@ export default function Page() {
     mode: "all",
     resolver: zodResolver(MemberSchema),
   });
+  const methods = useForm();
   const { handleSubmit } = methods;
 
   const handleSave = (data: FieldValues) => {
@@ -106,6 +110,18 @@ export default function Page() {
                 required={false}
               />
 
+              />
+              <InputForm
+                label="Jenis Kelamin"
+                name="gender"
+                type="radio"
+                options={[
+                  { value: "Laki-Laki", label: "Laki-Laki" },
+                  { value: "Perempuan", label: "Perempuan" },
+                ]}
+                placeholder={""}
+              />
+
               <InputForm
                 label="Keaktifan"
                 name="active"
@@ -117,6 +133,11 @@ export default function Page() {
                 ]}
                 isNumber
                 required={false}
+
+                  { value: "Aktif", label: "Aktif" },
+                  { value: "Tidak Aktif", label: "Tidak Aktif" },
+                ]}
+
               />
             </div>
             <div className="col-span-2 flex justify-center mt-6">
