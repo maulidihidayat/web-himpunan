@@ -27,6 +27,7 @@ export default function InputForm({
     control,
     formState: { errors },
   } = useFormContext();
+
   return (
     <div className="w-[335px]">
       <label className="block text-customgray font-bold mt-2">{label}</label>

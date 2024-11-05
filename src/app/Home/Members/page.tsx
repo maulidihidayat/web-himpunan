@@ -1,13 +1,12 @@
 "use client";
 import InputForm from "@/components/InputForm";
-import { Fullscreen } from "lucide-react";
 import React from "react";
 import { FieldValues, FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z  } from "zod";
+import { z } from "zod";
 
 const MemberSchema = z.object({
-  nim: z.string().min(10).max(15),
+  nim: z.string().min(10, { message: "Masukkan minimal 10 angka" }),
   email: z.string().email(),
   name: z.string().min(3, { message: "Nama tidak boleh kurang dari 3 huruf" }),
   phone_number: z.string().min(12),
