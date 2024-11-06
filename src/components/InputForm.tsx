@@ -1,7 +1,7 @@
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
-import { log } from "console";
+
 
 type InputFormProps = {
   name: string;
@@ -12,6 +12,7 @@ type InputFormProps = {
   isNumber?: boolean;
   className?: string;
 };
+
 
 export default function InputForm({
   name,
@@ -27,6 +28,7 @@ export default function InputForm({
     control,
     formState: { errors },
   } = useFormContext();
+
 
   return (
     <div className="w-[335px]">
@@ -88,3 +90,6 @@ export default function InputForm({
     </div>
   );
 }
+
+
+

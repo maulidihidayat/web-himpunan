@@ -1,9 +1,9 @@
-"use client";
+"use client"
 import InputForm from "@/components/InputForm";
+import { z } from "zod";
 import React from "react";
 import { FieldValues, FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 
 const MemberSchema = z.object({
   nim: z.string().min(10, { message: "Masukkan minimal 10 angka" }),
@@ -19,7 +19,7 @@ const MemberSchema = z.object({
 });
 
 export default function Page() {
-  const methods = useForm<z.infer<typeof MemberSchema>>({
+  const methods = useForm <z.infer<typeof MemberSchema>>({
     defaultValues: {
       nim: "",
       email: "",
@@ -101,9 +101,9 @@ export default function Page() {
                 ]}
               />
               <InputForm
+                placeholder={""}
                 label="Keaktifan"
                 name="active"
-                placeholder=""
                 type="radio"
                 options={[
                   { value: 1, label: "Aktif" },
@@ -115,7 +115,7 @@ export default function Page() {
             <div className="col-span-2 flex justify-center mt-6">
               <button
                 type="submit"
-                className="w-[150px] border-customPink border border-b-4 hover:border-b-[7px]  text-customPink font-bold py-3 rounded-md hover:bg-customPink-dark focus:outline-none focus:ring-2 focus:ring-customPink focus:ring-opacity-50 transition-all"
+                className="w-[150px] border-customPink border border-b-4 hover:border-b-[7px] text-customPink font-bold py-3 rounded-md hover:bg-customPink-dark focus:outline-none focus:ring-2 focus:ring-customPink focus:ring-opacity-50 transition-all"
               >
                 Submit
               </button>
