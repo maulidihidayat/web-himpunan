@@ -1,10 +1,27 @@
 "use client";
 import InputForm from "@/components/InputForm";
+import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { FieldValues, FormProvider, useForm } from "react-hook-form";
+import { z } from "zod";
+
+const userSchema = z.object({
+  Username: z.string().min(3, { message: "Minimal 3 character" }),
+  password: z.string().min(8, { message: "minimal 8 character" }),
+  profile: z.string().min(15, { message: "minimal 15 character" }),
+});
 
 export default function page() {
-  const methods = useForm();
+  const methods = useForm<z.infer<typeof userSchema>>({
+    defaultValues: {
+      Username: "",
+      password: "",
+      profile: "",
+    },
+    mode: "all",
+    resolver: zodResolver(userSchema),
+  });
+
   const { handleSubmit } = methods;
 
   const handleSave = (data: FieldValues) => {
@@ -32,7 +49,6 @@ export default function page() {
                     name="Username"
                     placeholder="udinsahrudin"
                     type="text"
-                    required
                   />
                 </div>
 
@@ -43,7 +59,6 @@ export default function page() {
                     name="password"
                     placeholder="******"
                     type="password"
-                    required
                   />
                 </div>
 
@@ -53,9 +68,7 @@ export default function page() {
                     label="Profile"
                     name="profile"
                     placeholder="input your profile here"
-                    required
                     type="textarea"
-                    
                   />
                 </div>
                 <div className="flex justify-center m-6">

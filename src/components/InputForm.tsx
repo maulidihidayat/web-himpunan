@@ -1,9 +1,6 @@
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
-import { log } from "console";
-import React from 'react';
-import { useFormContext } from 'react-hook-form';
 
 
 type InputFormProps = {
@@ -11,11 +8,11 @@ type InputFormProps = {
   label: string;
   type: string;
   placeholder: string;
-  required: boolean;
-
   options?: { value: string | number; label: string }[];
   isNumber?: boolean;
+  className?: string;
 };
+
 
 export default function InputForm({
   name,
@@ -23,14 +20,16 @@ export default function InputForm({
   type,
   placeholder,
   options,
-  required,
   isNumber,
+  className,
 }: InputFormProps) {
   const {
     register,
     control,
     formState: { errors },
   } = useFormContext();
+
+
   return (
     <div className="w-[335px]">
       <label className="block text-customgray font-bold mt-2">{label}</label>
@@ -48,7 +47,7 @@ export default function InputForm({
                       checked={data.value === val}
                       value={data.value}
                       type="radio"
-                      className="form-radio"
+                      className="form-radio "
                       onChange={(value) =>
                         onChange(
                           isNumber
@@ -65,43 +64,10 @@ export default function InputForm({
           ))}
         </div>
       ) : type === "textarea" ? (
-  options?: { value: string; label: string }[];
-};
-
-export default function InputForm({
-  name,
-  label,
-  type,
-  placeholder,
-  options,
-  required
-}: InputFormProps) {
-  const { register } = useFormContext();
-
-  return (
-    <div className="w-[335px]">
-      <label className="block text-customgray font-bold mt-2">{label}</label>
-      {type === 'radio' && options ? (
-        <div className="flex space-x-4 mt-2">
-          {options.map((option) => (
-            <label key={option.value} className="flex items-center space-x-2">
-              <input
-                {...register(name)}
-                type="radio"
-                value={option.value}
-                className="form-radio"
-              />
-              <span>{option.label}</span>
-            </label>
-          ))}
-        </div>
-      ) : type === 'textarea' ? (
         <textarea
           {...register(name)}
           placeholder={placeholder}
-          required={required}
           className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
-
           rows={4}
         />
       ) : (
@@ -109,20 +75,11 @@ export default function InputForm({
           {...register(name, {
             setValueAs: (value) => (isNumber ? Number(value) : value),
           })}
-
-          rows={4} 
-        />
-      ) : (
-        <input
-          {...register(name)}
-
           type={type}
           placeholder={placeholder}
-          required={required}
           className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
         />
       )}
-
       <ErrorMessage
         errors={errors}
         name={name}
@@ -133,3 +90,6 @@ export default function InputForm({
     </div>
   );
 }
+
+
+

@@ -15,13 +15,15 @@ export default function NotFound() {
         />
       </div>
       <div className="text-center">
-        <h1 className="text-center">404 Not Found</h1>
-        <p className="text-center mb-4">
+        <h1 className="text-center text-xl font-bold text-white">
+          404 Not Found
+        </h1>
+        <p className="text-center mb-4 text-white">
           The page you're looking for doesn't exist.
         </p>
         <a
           href="/"
-          className="p-4 mt-4  border-customPink text-customPink border rounded-xl border-b-4 hover:border-b-[6px] "
+          className="p-2 mt-6  border-white text-white  border rounded-xl border-b-4 hover:border-b-[6px] "
         >
           Go to Homepage
         </a>{" "}

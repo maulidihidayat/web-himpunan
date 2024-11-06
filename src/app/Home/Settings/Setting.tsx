@@ -1,10 +1,30 @@
 "use client";
 import InputForm from "@/components/InputForm";
+import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { FormProvider, useForm, FieldValues } from "react-hook-form";
+import { z } from "zod";
+
+const SettingsSchema = z.object({
+  email: z.string().email({ message: "Email harus di isi!" }),
+  username: z
+    .string()
+    .min(3, { message: "Nama tidak boleh kurang dari 3 huruf" }),
+  phoneNumber: z.string().min(10, { message: "Masukkan minimal 10 angka" }),
+  bio: z.string().min(15, { message: "Masukkan minimal 20 kata" }),
+});
 
 export default function Setting() {
-  const methods = useForm();
+  const methods = useForm<z.infer<typeof SettingsSchema>>({
+    defaultValues: {
+      email: "",
+      username: "",
+      phoneNumber: "",
+      bio: "",
+    },
+    mode: "all",
+    resolver: zodResolver(SettingsSchema),
+  });
   const { handleSubmit } = methods;
 
   const handleSave = (data: FieldValues) => {
@@ -60,7 +80,6 @@ export default function Setting() {
                     label="Full Name"
                     name="username"
                     placeholder="Udin Sarudin"
-                    required
                     type="text"
                   />
                 </div>
@@ -71,7 +90,6 @@ export default function Setting() {
                     label="Phone Number"
                     name="phoneNumber"
                     placeholder="087XXXXXX"
-                    required
                     type="tel"
                   />
                 </div>
@@ -85,7 +103,6 @@ export default function Setting() {
                     label="Email"
                     name="email"
                     placeholder="udin@gmail.com"
-                    required
                     type="email"
                   />
                 </div>
@@ -96,7 +113,6 @@ export default function Setting() {
                     label="Bio"
                     name="bio"
                     placeholder="Input your bio here"
-                    required
                     type="textarea"
                   />
                 </div>
