@@ -8,9 +8,9 @@ type InputFormProps = {
   label: string;
   type: string;
   placeholder: string;
-  required: boolean;
   options?: { value: string | number; label: string }[];
   isNumber?: boolean;
+  className?: string;
 };
 
 export default function InputForm({
@@ -19,8 +19,8 @@ export default function InputForm({
   type,
   placeholder,
   options,
-  required,
   isNumber,
+  className,
 }: InputFormProps) {
   const {
     register,
@@ -45,7 +45,7 @@ export default function InputForm({
                       checked={data.value === val}
                       value={data.value}
                       type="radio"
-                      className="form-radio"
+                      className="form-radio "
                       onChange={(value) =>
                         onChange(
                           isNumber
@@ -65,7 +65,6 @@ export default function InputForm({
         <textarea
           {...register(name)}
           placeholder={placeholder}
-          required={required}
           className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
           rows={4}
         />
@@ -76,7 +75,6 @@ export default function InputForm({
           })}
           type={type}
           placeholder={placeholder}
-          required={required}
           className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-customPink"
         />
       )}

@@ -29,7 +29,6 @@ export default function Page() {
                   name="Generations"
                   placeholder=""
                   type="date"
-                  required
                 />
               </div>
               <div className="flex justify-center">

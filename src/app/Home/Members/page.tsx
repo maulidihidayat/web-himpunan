@@ -7,14 +7,17 @@ import { z } from "zod";
 
 const MemberSchema = z.object({
   nim: z.string().min(10, { message: "Masukkan minimal 10 angka" }),
-  email: z.string().email(),
+  email: z.string().email({ message: "Email tidak valid" }),
   name: z.string().min(3, { message: "Nama tidak boleh kurang dari 3 huruf" }),
-  phone_number: z.string().min(12),
-  address: z.string().min(5),
+  phone_number: z
+    .string()
+    .min(12, { message: "Nomor telepon minimal 12 angka" }),
+  address: z.string().min(5, { message: "Alamat minimal 5 karakter" }),
   gender: z.string(),
   active: z.number(),
-  brithdate: z.string().min(1),
+  birthdate: z.string().min(1, { message: "Tanggal lahir harus diisi" }),
 });
+
 export default function Page() {
   const methods = useForm<z.infer<typeof MemberSchema>>({
     defaultValues: {
@@ -25,11 +28,12 @@ export default function Page() {
       address: "",
       gender: "Laki-Laki",
       active: 1,
-      brithdate: "",
+      birthdate: "",
     },
     mode: "all",
     resolver: zodResolver(MemberSchema),
   });
+
   const { handleSubmit } = methods;
 
   const handleSave = (data: FieldValues) => {
@@ -53,29 +57,24 @@ export default function Page() {
                 label="Full Name"
                 name="name"
                 type="text"
-                required={false}
               />
-
               <InputForm
                 placeholder="210030XXXX"
                 label="Nomor Induk Mahasiswa"
                 type="text"
                 name="nim"
-                required={false}
               />
               <InputForm
                 placeholder="udin@gmail.com"
                 label="Email"
                 name="email"
                 type="email"
-                required={false}
               />
               <InputForm
                 placeholder="087453XXXX"
                 label="Phone Number"
                 name="phone_number"
                 type="tel"
-                required={false}
               />
             </div>
             <div className="space-y-4">
@@ -84,16 +83,15 @@ export default function Page() {
                 label="Alamat"
                 name="address"
                 type="text"
-                required={false}
               />
               <InputForm
-                placeholder=""
+                placeholder="YYYY-MM-DD"
                 label="Tanggal Lahir"
                 name="birthdate"
                 type="date"
-                required={false}
               />
               <InputForm
+                placeholder={""}
                 label="Jenis Kelamin"
                 name="gender"
                 type="radio"
@@ -101,27 +99,23 @@ export default function Page() {
                   { value: "Laki-Laki", label: "Laki-Laki" },
                   { value: "Perempuan", label: "Perempuan" },
                 ]}
-                placeholder={""}
-                required={false}
               />
-
               <InputForm
                 label="Keaktifan"
                 name="active"
-                placeholder={""}
+                placeholder=""
                 type="radio"
                 options={[
                   { value: 1, label: "Aktif" },
                   { value: 0, label: "Tidak Aktif" },
                 ]}
                 isNumber
-                required={false}
               />
             </div>
             <div className="col-span-2 flex justify-center mt-6">
               <button
                 type="submit"
-                className="w-[150px] border-customPink border border-b-4 text-customPink font-bold py-3 rounded-md hover:bg-customPink-dark focus:outline-none focus:ring-2 focus:ring-customPink focus:ring-opacity-50 transition-all"
+                className="w-[150px] border-customPink border border-b-4 hover:border-b-[7px]  text-customPink font-bold py-3 rounded-md hover:bg-customPink-dark focus:outline-none focus:ring-2 focus:ring-customPink focus:ring-opacity-50 transition-all"
               >
                 Submit
               </button>
