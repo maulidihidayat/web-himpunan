@@ -27,7 +27,6 @@ const config: Config = withMT({
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        // Add more colors as needed
       },
       borderRadius: {
         lg: 'var(--radius)',
