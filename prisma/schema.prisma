@@ -47,8 +47,6 @@ model Roles {
   isAdmin Boolean
   members Member[]
 }
-
-
 model Divisions {
   id   String @id @default(cuid())
   name String
@@ -74,8 +72,6 @@ model News {
   member_id   String  @unique
   member      Member @relation(fields: [member_id], references: [id])  
 }
-
-
 
 model Chats {
   id        String  @id @default(cuid())
